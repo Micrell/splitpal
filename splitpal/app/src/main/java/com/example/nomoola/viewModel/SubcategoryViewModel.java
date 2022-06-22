@@ -41,4 +41,12 @@ public class SubcategoryViewModel extends AndroidViewModel {
     public void update(SubCategory subCategory) {
         this.mRepository.updateSubCat(subCategory);
     }
+
+    public LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID){
+        return this.mRepository.getNumberOfMembersInSubCategory(subCatID);
+    }
+
+    public LiveData<String> getNameOfFirstProfile(){
+        return this.mRepository.getUserName(1);
+    }
 }

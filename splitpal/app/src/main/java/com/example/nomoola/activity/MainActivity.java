@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("CREATION", "onCreate from " + this.getClass().toString() + " started");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().show();
+
+        getSupportActionBar().hide();
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);

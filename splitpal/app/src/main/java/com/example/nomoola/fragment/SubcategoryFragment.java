@@ -24,12 +24,15 @@ import com.example.nomoola.adapter.SubcategoryAdapter;
 import com.example.nomoola.fragment.dialog.AddSubCategoryDialog;
 import com.example.nomoola.viewModel.SubcategoryViewModel;
 
+import org.w3c.dom.Text;
+
 public class SubcategoryFragment extends Fragment {
 
     private SubcategoryViewModel mSubcategoryViewModel;
     private RecyclerView subcategoryRecyclerView;
     private SubcategoryAdapter subcategoryAdapter;
     private AppCompatButton addSubcatButton;
+    private TextView nameProfile;
 
     public SubcategoryFragment(){
         super();
@@ -55,6 +58,14 @@ public class SubcategoryFragment extends Fragment {
             public void onClick(View view) {
                 AddSubCategoryDialog addSubCategoryDialog = new AddSubCategoryDialog();
                 addSubCategoryDialog.show(getParentFragmentManager(), "AddSubCat_dialog");
+            }
+        });
+
+        this.nameProfile = view.findViewById(R.id.fragment_subcat_nameProfile);
+        this.mSubcategoryViewModel.getNameOfFirstProfile().observe(this.getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                nameProfile.setText("Hi " + s);
             }
         });
 
