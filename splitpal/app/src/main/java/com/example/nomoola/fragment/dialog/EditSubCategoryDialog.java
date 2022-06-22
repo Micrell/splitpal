@@ -61,9 +61,9 @@ public class EditSubCategoryDialog extends DialogFragment {
             @Override
             public void onClick(View view) {
                 String subCatName = editSubcatName.getText().toString();
-                int catID = subCategory.getM_CAT_ID();
-                int id = subCategory.getM_SUBCAT_ID();
-                subcategoryViewModel.update(catID, subCatName, id);
+                subCategory.setM_SUBCAT_NAME(subCatName);
+
+                subcategoryViewModel.update(subCategory);
                 dismiss();
             }
         });

@@ -7,17 +7,12 @@
 
     <fragment
         android:id="@+id/homePage"
-        android:name="com.example.nomoola.fragment.CategoryFragment"
+        android:name="com.example.nomoola.fragment.SubcategoryFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_category" />
-    <fragment
-        android:id="@+id/historyPage"
-        android:name="com.example.nomoola.fragment.InOutComeFragment"
-        android:label="History"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_subcategory" />
     <fragment
         android:id="@+id/profilePage"
         android:name="com.example.nomoola.fragment.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/activity_profile" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>

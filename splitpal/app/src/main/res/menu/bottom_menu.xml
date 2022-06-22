@@ -6,10 +6,6 @@
         android:icon="@drawable/ic_baseline_home"
         android:title="@string/home" />
     <item
-        android:id="@+id/historyPage"
-        android:title="@string/history"
-        android:icon="@drawable/ic_baseline_history" />
-    <item
         android:id="@+id/profilePage"
         android:title="@string/profile"
         android:icon="@drawable/ic_baseline_person_outline" />

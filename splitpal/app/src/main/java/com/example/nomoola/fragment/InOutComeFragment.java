@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nomoola.R;
 import com.example.nomoola.adapter.InOutComeAdapter;
 import com.example.nomoola.database.entity.SubCategory;
-import com.example.nomoola.fragment.dialog.AddCategoryDialog;
 import com.example.nomoola.fragment.dialog.AddInOutComeDialog;
 import com.example.nomoola.viewModel.InOutComeViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

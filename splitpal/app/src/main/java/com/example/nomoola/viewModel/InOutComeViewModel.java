@@ -5,12 +5,10 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.InOutCome;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.database.repository.DataRepository;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public class InOutComeViewModel extends AndroidViewModel {
@@ -38,10 +36,6 @@ public class InOutComeViewModel extends AndroidViewModel {
 
     public void delete(InOutCome inOutCome){
         this.mRepository.delete(inOutCome);
-    }
-
-    public void update(int catID, int subCatID, String name, LocalDate date, double amount, int id){
-        mRepository.update(catID, subCatID, name, date, amount, id);
     }
 
     public void update(InOutCome inOutCome){

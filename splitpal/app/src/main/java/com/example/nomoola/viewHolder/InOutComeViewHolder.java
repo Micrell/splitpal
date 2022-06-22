@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nomoola.R;
 import com.example.nomoola.database.entity.InOutCome;
-import com.example.nomoola.fragment.dialog.AddCategoryDialog;
 import com.example.nomoola.fragment.dialog.EditInOutComeDialog;
 
 import java.time.format.DateTimeFormatter;

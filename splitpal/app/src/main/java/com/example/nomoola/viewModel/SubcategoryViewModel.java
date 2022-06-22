@@ -6,7 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.database.repository.DataRepository;
 
@@ -27,10 +26,6 @@ public class SubcategoryViewModel extends AndroidViewModel {
         return mAllSubCategories;
     }
 
-    public LiveData<List<SubCategory>> getSubCategoriesOf(int categoryID){
-        return mRepository.getSubCategoriesOf(categoryID);
-    }
-
     public void insert(SubCategory subCategory){
         mRepository.insert(subCategory);
     }
@@ -39,27 +34,11 @@ public class SubcategoryViewModel extends AndroidViewModel {
         mRepository.delete(subCategory);
     }
 
-    public void update(int catID, String subcatName, int id) {
-        mRepository.update(catID, subcatName, id);
-    }
-
-    public LiveData<Integer> getPercentUsedBySubcategory(SubCategory subCategory){
-        return this.mRepository.getPercentUsedOf(subCategory.getM_SUBCAT_ID());
-    }
-
-    public LiveData<Integer> getPercentUsedOfCategory(Category category){
-        return this.mRepository.getPercentUsedOfCategory(category.getM_CAT_ID());
-    }
-
-    public LiveData<Double> getCategoryBudget(Category category){
-        return this.mRepository.getBudgetOf(category.getM_CAT_ID());
-    }
-
-    public LiveData<Double> getBudgetLeftOf(Category category) {
-        return this.mRepository.getBudgetLeftOf(category.getM_CAT_ID());
-    }
-
     public LiveData<Double> getAmountUsedBySubcategory(SubCategory subCategory) {
         return this.mRepository.getAmountUsedBySubcategory(subCategory.getM_SUBCAT_ID());
+    }
+
+    public void update(SubCategory subCategory) {
+        this.mRepository.updateSubCat(subCategory);
     }
 }

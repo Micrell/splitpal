@@ -1,6 +1,5 @@
 package com.example.nomoola.fragment.dialog;
 
-import android.content.ContextWrapper;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,16 +15,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nomoola.R;
-import com.example.nomoola.database.converter.Converters;
-import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.InOutCome;
 import com.example.nomoola.database.entity.SubCategory;
-import com.example.nomoola.viewModel.CategoryViewModel;
 import com.example.nomoola.viewModel.InOutComeViewModel;
 
 import java.time.LocalDate;
@@ -112,7 +107,6 @@ public class AddInOutComeDialog extends DialogFragment {
                 inOutCome.setM_INOUTCOME_AMOUNT(amount);
                 inOutCome.setM_INOUTCOME_DATE(date);
                 inOutCome.setM_SUBCAT_ID(subcat.getM_SUBCAT_ID());
-                inOutCome.setM_CAT_ID(subcat.getM_CAT_ID());
 
                 inOutComeViewModel.insert(inOutCome);
                 dismiss();

@@ -125,8 +125,6 @@ public class EditInOutComeDialog extends DialogFragment {
                 inOutCome.setM_INOUTCOME_AMOUNT(amount);
                 inOutCome.setM_INOUTCOME_DATE(date);
                 inOutCome.setM_SUBCAT_ID(subcat.getM_SUBCAT_ID());
-                inOutCome.setM_CAT_ID(subcat.getM_CAT_ID());
-
                 inOutComeViewModel.update(inOutCome);
                 dismiss();
             }

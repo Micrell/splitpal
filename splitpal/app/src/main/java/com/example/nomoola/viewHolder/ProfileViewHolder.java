@@ -1,41 +1,18 @@
 package com.example.nomoola.viewHolder;
 
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.nomoola.R;
-import com.example.nomoola.activity.MainActivity;
-import com.example.nomoola.database.dao.ProfileDAO;
 import com.example.nomoola.database.entity.Profile;
-import com.example.nomoola.fragment.ProfileFragment;
-import com.example.nomoola.viewModel.CategoryViewModel;
 import com.example.nomoola.viewModel.ProfileViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
-import android.content.SharedPreferences;
-
-import org.w3c.dom.Text;
-
-import java.util.Locale;
 
 public class ProfileViewHolder extends RecyclerView.ViewHolder {
 
@@ -126,11 +103,5 @@ public class ProfileViewHolder extends RecyclerView.ViewHolder {
             this.currency_dollar.setBackgroundResource(R.drawable.rounded_corners_green);
         }
 
-    }
-
-    public static ProfileViewHolder create(ViewGroup parent, FragmentManager fragmentManager, ProfileViewModel profileViewModel){
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_profile, parent, false);
-        return new ProfileViewHolder(view, fragmentManager, profileViewModel);
     }
 }

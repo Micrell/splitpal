@@ -13,22 +13,20 @@ import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.nomoola.R;
-import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.viewModel.SubcategoryViewModel;
 
 public class AddSubCategoryDialog extends DialogFragment {
 
-    private Category category;
+
     private SubCategory subCategory;
     private EditText editSubcatName;
     private ImageButton exitbutton, confirmButton, deleteButton;
 
     private SubcategoryViewModel subcategoryViewModel;
 
-    public AddSubCategoryDialog(Category category){
+    public AddSubCategoryDialog(){
         super();
-        this.category = category;
         this.subCategory = new SubCategory();
     }
 
@@ -58,7 +56,6 @@ public class AddSubCategoryDialog extends DialogFragment {
             @Override
             public void onClick(View view) {
                 subCategory.setM_SUBCAT_NAME(editSubcatName.getText().toString());
-                subCategory.setM_CAT_ID(category.getM_CAT_ID());
                 subcategoryViewModel.insert(subCategory);
                 dismiss();
             }

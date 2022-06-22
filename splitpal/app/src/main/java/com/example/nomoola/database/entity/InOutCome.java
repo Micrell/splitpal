@@ -14,30 +14,6 @@ import java.util.List;
 @Entity(tableName = "T_INOUTCOME")
 public class InOutCome {
 
-//    public enum InOutComeType{
-//        INCOME, OUTCOME;
-//
-//        @Override
-//        public String toString(){
-//            if(this == INCOME){
-//                return "INCOME";
-//            }else if(this == OUTCOME){
-//                return "OUTCOME";
-//            }else{
-//                return super.toString();
-//            }
-//        }
-//
-//        public static List<Category.CategoryType> getAllPossibilities(){
-//            ArrayList<Category.CategoryType> list = new ArrayList<>();
-//            list.add(Category.CategoryType.INCOME);
-//            list.add(Category.CategoryType.OUTCOME);
-//
-//            return list;
-//        }
-//    }
-
-
     /**
      * ATTRIBUTE
      */
@@ -49,10 +25,6 @@ public class InOutCome {
     @NonNull
     @ColumnInfo(name = "INOUTCOME_NAME")
     private String m_INOUTCOME_NAME;
-
-    @NonNull
-    @ColumnInfo(name = "CAT_ID")
-    private int m_CAT_ID;
 
     @NonNull
     @ColumnInfo(name = "SUBCAT_ID")
@@ -75,10 +47,9 @@ public class InOutCome {
 
     }
 
-    public InOutCome(String inOutName, int catID, int subCatID, Double amount, LocalDate date){
+    public InOutCome(String inOutName, int subCatID, Double amount, LocalDate date){
         Log.d("CREATION", "Instantiation of Category = " + inOutName);
         this.m_INOUTCOME_NAME = inOutName;
-        this.m_CAT_ID = catID;
         this.m_SUBCAT_ID = subCatID;
         this.m_INOUTCOME_AMOUNT = amount;
         this.m_INOUTCOME_DATE = date;
@@ -104,14 +75,6 @@ public class InOutCome {
 
     public void setM_INOUTCOME_ID(@NonNull int m_INOUTCOME_ID) {
         this.m_INOUTCOME_ID = m_INOUTCOME_ID;
-    }
-
-    public int getM_CAT_ID() {
-        return m_CAT_ID;
-    }
-
-    public void setM_CAT_ID(int m_CAT_ID) {
-        this.m_CAT_ID = m_CAT_ID;
     }
 
     public int getM_SUBCAT_ID() {

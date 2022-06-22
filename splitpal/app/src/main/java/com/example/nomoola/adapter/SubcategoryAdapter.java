@@ -7,9 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.viewHolder.SubcategoryViewHolder;
 import com.example.nomoola.viewModel.SubcategoryViewModel;
