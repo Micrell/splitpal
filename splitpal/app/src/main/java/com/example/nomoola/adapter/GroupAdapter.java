@@ -21,18 +21,19 @@ public class GroupAdapter extends ListAdapter<Profile, GroupViewHolder> {
 
     private FragmentManager fragmentManager;
     private InOutComeViewModel inOutComeViewModel;
+    private SubCategory subCategory;
 
-    public GroupAdapter(@NonNull DiffUtil.ItemCallback<Profile> diffCallback, FragmentManager fragmentManager, InOutComeViewModel intOutComeViewModel) {
+    public GroupAdapter(@NonNull DiffUtil.ItemCallback<Profile> diffCallback, FragmentManager fragmentManager, InOutComeViewModel intOutComeViewModel, SubCategory subCategory) {
         super(diffCallback);
         this.inOutComeViewModel = intOutComeViewModel;
         this.fragmentManager = fragmentManager;
-
+        this.subCategory = subCategory;
     }
 
     @NonNull
     @Override
     public GroupViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return GroupViewHolder.create(parent, this.fragmentManager, this.inOutComeViewModel);
+        return GroupViewHolder.create(parent, this.fragmentManager, this.inOutComeViewModel, this.subCategory);
     }
 
     @Override

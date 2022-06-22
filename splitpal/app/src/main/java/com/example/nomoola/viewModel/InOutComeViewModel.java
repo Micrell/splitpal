@@ -79,8 +79,8 @@ public class InOutComeViewModel extends AndroidViewModel {
         return this.mRepository.getNumberOfMembersInSubCategory(subCatID);
     }
 
-    public LiveData<Double> getToTtalExpense(int ownerID){
-        return this.mRepository.getToTtalExpense(ownerID);
+    public LiveData<Double> getToTtalExpense(int ownerID, int subcatID){
+        return this.mRepository.getToTtalExpense(ownerID, subcatID);
     }
 
 }

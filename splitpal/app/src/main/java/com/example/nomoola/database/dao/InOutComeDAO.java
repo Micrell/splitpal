@@ -44,7 +44,8 @@ public interface InOutComeDAO {
     LiveData<Double> getAmountUsedBySubcategory(int m_subcat_id);
 
     @Query("SELECT SUM(INOUTCOME_AMOUNT) " +
-            "FROM T_INOUTCOME " +
-            "WHERE INOUTCOME_OWNER_ID=:ownerID")
-    LiveData<Double> getToTtalExpense(int ownerID);
+            "FROM T_INOUTCOME INNER JOIN T_SUBCATEGORY " +
+            "ON T_INOUTCOME.SUBCAT_ID = T_SUBCATEGORY.SUBCAT_ID " +
+            "WHERE INOUTCOME_OWNER_ID=:ownerID AND T_INOUTCOME.SUBCAT_ID=:subCatID")
+    LiveData<Double> getTotalExpense(int ownerID, int subCatID);
 }

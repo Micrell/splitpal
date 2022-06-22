@@ -52,7 +52,7 @@ public class GroupFragment extends Fragment {
 
 
         this.mInOutViewModel = new ViewModelProvider(this).get(InOutComeViewModel.class);
-        this.groupAdapter = new GroupAdapter(new GroupAdapter.GroupDiff(), this.getParentFragmentManager(), this.mInOutViewModel);
+        this.groupAdapter = new GroupAdapter(new GroupAdapter.GroupDiff(), this.getParentFragmentManager(), this.mInOutViewModel, this.subCategory);
         View view= inflater.inflate(R.layout.fragment_group, container, false);
 
 

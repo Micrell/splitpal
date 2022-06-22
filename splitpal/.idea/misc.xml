@@ -42,12 +42,13 @@
         <entry key="..\:/UTBM/INFO_2/SY43/Projet/nomoola/app/src/main/res/menu/bottom_menu.xml" value="0.3087719298245614" />
         <entry key="..\:/UTBM/INFO_2/SY43/Projet/nomoola/app/src/main/res/xml/preferences.xml" value="0.32592592592592595" />
         <entry key="..\:/UTBM/INFO_2/SY43/nomoola/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/ercan/Documents/code/HM40/new/splitpal/splitpal/app/src/main/res/layout/item_group.xml" value="0.1" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/activity_category.xml" value="0.14407866609662248" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/activity_main.xml" value="0.3922462941847206" />
+        <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/fragment_activity.xml" value="0.1470713980333476" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/fragment_category.xml" value="0.14407866609662248" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/fragment_group.xml" value="0.22573749465583584" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/fragment_in_out_come.xml" value="0.14407866609662248" />
+        <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/fragment_subcategory.xml" value="0.536" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/item_group.xml" value="0.264" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/HM40/Projet/splitpal/splitpal/app/src/main/res/layout/item_in_out_come.xml" value="0.536" />
@@ -90,7 +91,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
