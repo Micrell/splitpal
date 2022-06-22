@@ -194,5 +194,8 @@ public class DataRepository {
     }
 
 
+    public LiveData<String> getProfileNameAccordingToID(int profileID){
+        return this.mProfileDAO.getProfileNameAccordingToID(profileID);
+    }
 
 }

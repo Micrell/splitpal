@@ -8,25 +8,32 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nomoola.R;
 import com.example.nomoola.database.entity.InOutCome;
 import com.example.nomoola.fragment.dialog.EditInOutComeDialog;
+import com.example.nomoola.viewModel.SubcategoryViewModel;
 
 import java.time.format.DateTimeFormatter;
 
 public class InOutComeViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView dateMonth, dateDay, dateYear, nameView, amountView;
+    private TextView dateMonth, dateDay, dateYear, nameView, amountView, ownerName;
     private ImageButton editButton;
 
     private FragmentManager fragmentManager;
+    private SubcategoryViewModel subcategoryViewModel;
     private InOutCome inOutCome;
+    private View view;
 
-    public InOutComeViewHolder(@NonNull View view, FragmentManager fragmentManager) {
+    public InOutComeViewHolder(@NonNull View view, FragmentManager fragmentManager, SubcategoryViewModel subcategoryViewModel) {
         super(view);
         this.fragmentManager = fragmentManager;
+        this.subcategoryViewModel = subcategoryViewModel;
+        this.view = view;
 
         this.nameView = view.findViewById(R.id.item_inoutcome_name);
         this.dateMonth = view.findViewById(R.id.item_inoutcome_dateMonth);
@@ -34,6 +41,7 @@ public class InOutComeViewHolder extends RecyclerView.ViewHolder {
         this.dateYear = view.findViewById(R.id.item_inoutcome_dateYear);
         this.amountView = view.findViewById(R.id.item_inoutcome_amount);
         this.editButton = view.findViewById(R.id.item_inoutcome_editButton);
+        this.ownerName = view.findViewById(R.id.item_subcat_ownerName);
 
     }
 
@@ -44,6 +52,12 @@ public class InOutComeViewHolder extends RecyclerView.ViewHolder {
         this.dateDay.setText(String.valueOf(this.inOutCome.getM_INOUTCOME_DATE().getDayOfMonth()));
         this.dateYear.setText(String.valueOf(this.inOutCome.getM_INOUTCOME_DATE().getYear()));
         this.amountView.setText(this.inOutCome.getM_INOUTCOME_AMOUNT() + "€");
+        this.subcategoryViewModel.getProfileNameAccordingToID(this.inOutCome.getM_INOUTCOME_OWNER_ID()).observe((LifecycleOwner) this.view.getContext(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                ownerName.setText(s);
+            }
+        });
 
         this.editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +68,8 @@ public class InOutComeViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    public static InOutComeViewHolder create(ViewGroup parent, FragmentManager fragmentManager){
+    public static InOutComeViewHolder create(ViewGroup parent, FragmentManager fragmentManager, SubcategoryViewModel subcategoryViewModel){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_in_out_come, parent, false);
-        return new InOutComeViewHolder(view, fragmentManager);
+        return new InOutComeViewHolder(view, fragmentManager, subcategoryViewModel);
     }
 }

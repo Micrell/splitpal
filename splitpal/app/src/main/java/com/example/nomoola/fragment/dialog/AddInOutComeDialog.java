@@ -107,6 +107,7 @@ public class AddInOutComeDialog extends DialogFragment {
                 inOutCome.setM_INOUTCOME_AMOUNT(amount);
                 inOutCome.setM_INOUTCOME_DATE(date);
                 inOutCome.setM_SUBCAT_ID(subcat.getM_SUBCAT_ID());
+                inOutCome.setM_INOUTCOME_OWNER_ID(1);
 
                 inOutComeViewModel.insert(inOutCome);
                 dismiss();

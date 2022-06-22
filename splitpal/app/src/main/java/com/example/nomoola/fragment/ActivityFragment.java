@@ -14,10 +14,12 @@ import com.example.nomoola.R;
 import com.example.nomoola.adapter.InOutComeAdapter;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.viewModel.InOutComeViewModel;
+import com.example.nomoola.viewModel.SubcategoryViewModel;
 
 public class ActivityFragment extends Fragment {
 
     private InOutComeViewModel mInOutViewModel;
+    private SubcategoryViewModel mSubcategoryViewModel;
     private InOutComeAdapter inOutComeAdapter;
     private RecyclerView inOutComeRecyclerView;
     private SubCategory subCategory;
@@ -45,7 +47,8 @@ public class ActivityFragment extends Fragment {
 
 
         this.mInOutViewModel = new ViewModelProvider(this).get(InOutComeViewModel.class);
-        this.inOutComeAdapter = new InOutComeAdapter(new InOutComeAdapter.InOutComeDiff(), this.getParentFragmentManager());
+        this.mSubcategoryViewModel = new ViewModelProvider(this).get(SubcategoryViewModel.class);
+        this.inOutComeAdapter = new InOutComeAdapter(new InOutComeAdapter.InOutComeDiff(), this.getParentFragmentManager(), this.mSubcategoryViewModel);
 
         View view= inflater.inflate(R.layout.fragment_activity, container, false);
 

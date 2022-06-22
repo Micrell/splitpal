@@ -83,20 +83,33 @@ public abstract class NomoolaRoomDataBase extends RoomDatabase {
 
             undCat = new SubCategory("REPARATION");
             dao.insertSubCategory(undCat);
-            undCat = new SubCategory("GAZ");
-            dao.insertSubCategory(undCat);
         }
 
         private void populateInOutCome(){
             InOutComeDAO dao = INSTANCE.inOutComeDAO();
 
-            InOutCome come = new InOutCome("week grocery at SuperU",1, 56.89, LocalDate.now());
+            InOutCome come = new InOutCome("week grocery at SuperU",1, 56.89, LocalDate.now(), 1);
             dao.insertInOutCome(come);
-            come = new InOutCome("BK with my friends", 2, 13.50, LocalDate.now());
+            come = new InOutCome("BK with my friends", 1, 13.50, LocalDate.now(), 2);
             dao.insertInOutCome(come);
-            come = new InOutCome("motor reparation", 3, 207.90, LocalDate.now());
+            come = new InOutCome("motor reparation", 1, 207.90, LocalDate.now(), 3);
             dao.insertInOutCome(come);
-            come = new InOutCome("weekly fuel", 4, 60.00, LocalDate.now());
+
+
+            come = new InOutCome("weekly fuel", 2, 60.00, LocalDate.now(), 1);
+            dao.insertInOutCome(come);
+            come = new InOutCome("week grocery at SuperU",2, 56.89, LocalDate.now(), 2);
+            dao.insertInOutCome(come);
+            come = new InOutCome("BK with my friends", 2, 13.50, LocalDate.now(), 3);
+            dao.insertInOutCome(come);
+            come = new InOutCome("motor reparation", 2, 207.90, LocalDate.now(), 4);
+            dao.insertInOutCome(come);
+
+            come = new InOutCome("weekly fuel", 3, 60.00, LocalDate.now(), 1);
+            dao.insertInOutCome(come);
+            come = new InOutCome("week grocery at SuperU",3, 56.89, LocalDate.now(), 2);
+            dao.insertInOutCome(come);
+            come = new InOutCome("BK with my friends", 3, 13.50, LocalDate.now(), 3);
             dao.insertInOutCome(come);
 
         }

@@ -37,6 +37,10 @@ public class InOutCome {
     @ColumnInfo(name = "INOUTCOME_DATE")
     private LocalDate m_INOUTCOME_DATE;
 
+    @NonNull
+    @ColumnInfo(name = "INOUTCOME_OWNER_ID")
+    private int m_INOUTCOME_OWNER_ID;
+
 
 
     /**
@@ -47,12 +51,14 @@ public class InOutCome {
 
     }
 
-    public InOutCome(String inOutName, int subCatID, Double amount, LocalDate date){
+    public InOutCome(String inOutName, int subCatID, Double amount, LocalDate date, int ownerID){
         Log.d("CREATION", "Instantiation of Category = " + inOutName);
         this.m_INOUTCOME_NAME = inOutName;
         this.m_SUBCAT_ID = subCatID;
         this.m_INOUTCOME_AMOUNT = amount;
         this.m_INOUTCOME_DATE = date;
+        this.m_INOUTCOME_OWNER_ID = ownerID;
+
     }
 
     /**
@@ -102,4 +108,11 @@ public class InOutCome {
         this.m_INOUTCOME_DATE = m_INOUTCOME_DATE;
     }
 
+    public int getM_INOUTCOME_OWNER_ID() {
+        return m_INOUTCOME_OWNER_ID;
+    }
+
+    public void setM_INOUTCOME_OWNER_ID(int m_INOUTCOME_OWNER_ID) {
+        this.m_INOUTCOME_OWNER_ID = m_INOUTCOME_OWNER_ID;
+    }
 }

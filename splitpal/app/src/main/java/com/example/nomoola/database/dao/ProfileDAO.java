@@ -50,4 +50,9 @@ public interface ProfileDAO {
     @Query("SELECT PROFILE_ID " +
             "FROM T_PROFILE")
     int getUserID();
+
+    @Query("SELECT PROFILE_NAME " +
+            "FROM T_PROFILE " +
+            "WHERE PROFILE_ID=:profileID")
+    LiveData<String> getProfileNameAccordingToID(int profileID);
 }
