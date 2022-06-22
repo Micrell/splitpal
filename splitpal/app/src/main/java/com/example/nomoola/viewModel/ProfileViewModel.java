@@ -51,4 +51,8 @@ public class ProfileViewModel extends AndroidViewModel {
     public LiveData<String> getUserName(Profile profile) {
         return this.mRepository.getUserName(profile.getM_PROFILE_ID());
     }
+
+    public LiveData<List<String>> getAllUsernames(){
+        return this.mRepository.getAllUsernames();
+    }
 }

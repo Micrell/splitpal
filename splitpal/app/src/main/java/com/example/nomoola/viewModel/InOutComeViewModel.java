@@ -78,4 +78,8 @@ public class InOutComeViewModel extends AndroidViewModel {
     public LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID){
         return this.mRepository.getNumberOfMembersInSubCategory(subCatID);
     }
+    public LiveData<List<String>> getAllUsernames(){
+        return this.mRepository.getAllUsernames();
+    }
+
 }

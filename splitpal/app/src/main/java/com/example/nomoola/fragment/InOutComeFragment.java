@@ -9,18 +9,27 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.nomoola.R;
 import com.example.nomoola.adapter.FragmentAdapter;
 import com.example.nomoola.adapter.InOutComeAdapter;
+import com.example.nomoola.adapter.MembersAdapter;
+import com.example.nomoola.database.entity.Profile;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.fragment.dialog.AddInOutComeDialog;
 import com.example.nomoola.viewModel.InOutComeViewModel;
+import com.example.nomoola.viewModel.ProfileViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class InOutComeFragment extends Fragment {
 
@@ -29,6 +38,12 @@ public class InOutComeFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager2 viewPager2;
     private FragmentAdapter adapter;
+    private RecyclerView recyclerView;
+    private MembersAdapter membersAdapter;
+    private InOutComeViewModel mInOutViewModel;
+    private ProfileViewModel profileViewModel;
+    private  List<String> initials;
+
 
 
     private RecyclerView inOutComeRecyclerView;
@@ -47,6 +62,8 @@ public class InOutComeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+        this.mInOutViewModel = new ViewModelProvider(this).get(InOutComeViewModel.class);
+        this.profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
         View view = inflater.inflate(R.layout.fragment_in_out_come, container, false);
 
         tabLayout = view.findViewById(R.id.tabLayout);
@@ -82,6 +99,22 @@ public class InOutComeFragment extends Fragment {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
+        recyclerView = view.findViewById(R.id.members_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        this.mInOutViewModel.getProfileFromSubCat(this.subCategory.getM_SUBCAT_ID()).observe((LifecycleOwner) getContext(), new Observer<List<Profile>>() {
+            @Override
+            public void onChanged(List<Profile> profiles) {
+                initials = new ArrayList<>();
+                for (Profile p : profiles) {
+                    initials.add(p.getM_USERNAME());
+                }
+                membersAdapter = new MembersAdapter(initials);
+                recyclerView.setAdapter(membersAdapter);
+            }
+        });
+
 
 
         this.addCome = view.findViewById(R.id.fragment_come_addInOutCome);

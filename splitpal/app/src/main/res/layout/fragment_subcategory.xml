@@ -60,28 +60,10 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/subcategory_addSubcategory_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:drawableStart="@drawable/ic_add_category"
-            android:text="@string/nomoola_add_subcategory"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="225dp"
-            tools:layout_editor_absoluteY="41dp" />
-    </LinearLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/subcategory_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="500dp"
         android:layout_gravity="center_horizontal"
         android:foregroundGravity="center_horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -90,4 +72,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         tools:listitem="@layout/item_subcategory" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/subcategory_addSubcategory_button"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="70dp"
+        android:backgroundTint="@color/nomoola_blue"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="41dp"
+        android:layout_marginStart="170dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_add_plus"
+            android:layout_margin="10dp"/>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

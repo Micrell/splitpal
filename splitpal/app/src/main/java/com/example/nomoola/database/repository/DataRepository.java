@@ -51,7 +51,7 @@ public class DataRepository {
         SUBCATEGORY
      */
 
-    public LiveData<List<SubCategory>> getAllSubCategories(){
+    public LiveData<List<SubCategory>> getAllSubCategories() {
         return mAllSubCategory;
     }
 
@@ -60,8 +60,9 @@ public class DataRepository {
             mSubCategoryDAO.insertSubCategory(subCategory);
         });
     }
-    public void delete(SubCategory subCategory){
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+
+    public void delete(SubCategory subCategory) {
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mSubCategoryDAO.deleteSubCategory(subCategory);
         });
     }
@@ -75,7 +76,7 @@ public class DataRepository {
     }
 
     public void updateSubCat(SubCategory subCategory) {
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mSubCategoryDAO.updateSubCategory(subCategory);
         });
     }
@@ -85,11 +86,12 @@ public class DataRepository {
         INOUTCOME
      */
 
-    public LiveData<List<InOutCome>> getmAllInOutCome(){
+    public LiveData<List<InOutCome>> getmAllInOutCome() {
         return mAllInOutCome;
     }
-    public void insert(InOutCome inOutCome){
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+
+    public void insert(InOutCome inOutCome) {
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mInOutComeDAO.insertInOutCome(inOutCome);
         });
     }
@@ -103,8 +105,8 @@ public class DataRepository {
         this.mInOutComeDAO.deleteInOutCome(inOutCome);
     }
 
-    public void update(InOutCome inOutCome){
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+    public void update(InOutCome inOutCome) {
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mInOutComeDAO.updateInOutCome(inOutCome);
         });
     }
@@ -122,36 +124,38 @@ public class DataRepository {
             mProfileDAO.insertProfile(profile);
         });
     }
+
     public void delete(Profile profile) {
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mProfileDAO.deleteProfile(profile);
         });
     }
+
     public void update(int userID, String userName, Profile.userLanguage language, Profile.userCurrency currency) {
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mProfileDAO.updateProfile(userID, userName, language, currency);
         });
     }
 
-    public void setLanguage(int userID, Profile.userLanguage language){
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+    public void setLanguage(int userID, Profile.userLanguage language) {
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mProfileDAO.setLanguage(userID, language);
         });
     }
 
-    public void setCurrency(int userID, Profile.userCurrency currency){
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+    public void setCurrency(int userID, Profile.userCurrency currency) {
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mProfileDAO.setCurrency(userID, currency);
         });
     }
 
-    public void setUsername(int userID, String userName){
-        NomoolaRoomDataBase.databaseWriteExecutor.execute(()->{
+    public void setUsername(int userID, String userName) {
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mProfileDAO.setUserName(userID, userName);
         });
     }
 
-    public LiveData<String> getUserName(int userID){
+    public LiveData<String> getUserName(int userID) {
         return this.mProfileDAO.getUserName(userID);
     }
 
@@ -163,39 +167,43 @@ public class DataRepository {
         SUBCATEGORYPROFILE
      */
 
-    public void insertSubCatProfile(SubCategoryProfile...subCategoryProfiles){
+    public void insertSubCatProfile(SubCategoryProfile... subCategoryProfiles) {
         NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mSubCategoryProfileDAO.insertSubCatProfile(subCategoryProfiles);
         });
     }
 
-    public void updateSubCatProfile(SubCategoryProfile...subCategoryProfiles){
+    public void updateSubCatProfile(SubCategoryProfile... subCategoryProfiles) {
         NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mSubCategoryProfileDAO.updateSubCatProfile(subCategoryProfiles);
         });
     }
 
-    public void deleteSubCatProfile(SubCategoryProfile subCategoryProfile){
+    public void deleteSubCatProfile(SubCategoryProfile subCategoryProfile) {
         NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
             mSubCategoryProfileDAO.deleteSubCatProfile(subCategoryProfile);
         });
     }
 
-    public LiveData<List<SubCategoryProfile>> getAllSubCatProfile(){
+    public LiveData<List<SubCategoryProfile>> getAllSubCatProfile() {
         return this.mSubCategoryProfileDAO.getAllSubCatProfile();
     }
 
-    public LiveData<List<Profile>> getProfileFromSubCat(int subCatID){
+    public LiveData<List<Profile>> getProfileFromSubCat(int subCatID) {
         return this.mSubCategoryProfileDAO.getProfileFromSubCat(subCatID);
     }
 
-    public LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID){
+    public LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID) {
         return this.mSubCategoryProfileDAO.getNumberOfMembersInSubCategory(subCatID);
     }
 
 
-    public LiveData<String> getProfileNameAccordingToID(int profileID){
+    public LiveData<String> getProfileNameAccordingToID(int profileID) {
         return this.mProfileDAO.getProfileNameAccordingToID(profileID);
+    }
+
+    public LiveData<List<String>> getAllUsernames() {
+        return this.mProfileDAO.getAllUsernames();
     }
 
 }

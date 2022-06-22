@@ -16,6 +16,7 @@ import com.example.nomoola.adapter.InOutComeAdapter;
 import com.example.nomoola.database.entity.Profile;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.viewModel.InOutComeViewModel;
+import com.example.nomoola.viewModel.ProfileViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
