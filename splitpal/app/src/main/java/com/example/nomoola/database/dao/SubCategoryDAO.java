@@ -46,4 +46,6 @@ public interface SubCategoryDAO {
 
     @Query("SELECT * FROM T_SUBCATEGORY WHERE SUBCAT_NAME=:name")
     SubCategory getSubCategoryNamed(String name);
+
+
 }

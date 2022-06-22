@@ -41,9 +41,9 @@ public class SubcategoryViewHolder extends RecyclerView.ViewHolder {
 
         this.subcatName = view.findViewById(R.id.item_subCat_name);
         this.editSubcatButton = view.findViewById(R.id.item_subCat_editSubCat);
-        this.percentBudgetLeft = view.findViewById(R.id.item_subCat_progressBar);
-        this.subCatBudgetPercentUsedView = view.findViewById(R.id.item_subcategory_budgetUsedTextView);
-        this.subCatBudgetAmountUsedView = view.findViewById(R.id.item_subcategory_amountUsed);
+        //this.percentBudgetLeft = view.findViewById(R.id.item_subCat_progressBar);
+        //this.subCatBudgetPercentUsedView = view.findViewById(R.id.item_subcategory_budgetUsedTextView);
+        //this.subCatBudgetAmountUsedView = view.findViewById(R.id.item_subcategory_amountUsed);
         this.cardView = view.findViewById(R.id.item_subCat_cardView);
 
         this.editSubcatButton.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +70,7 @@ public class SubcategoryViewHolder extends RecyclerView.ViewHolder {
         this.subCategory = subcategory;
         this.subcatName.setText(this.subCategory.getM_SUBCAT_NAME());
 
+        /*
         this.subcategoryViewModel.getPercentUsedBySubcategory(this.subCategory).observe((LifecycleOwner) view.getContext(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer percentUsed) {
@@ -87,6 +88,7 @@ public class SubcategoryViewHolder extends RecyclerView.ViewHolder {
                 subCatBudgetAmountUsedView.setText(amountUsed + "€");
             }
         });
+         */
 
 
     }
