@@ -40,4 +40,5 @@ public interface SubCategoryProfileDAO {
             "FROM T_SUBCATEGORYPROFILE " +
             "WHERE SUBCAT_ID=:subCatID ")
     LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID);
+
 }

@@ -49,4 +49,8 @@ public class SubcategoryViewModel extends AndroidViewModel {
     public LiveData<String> getNameOfFirstProfile(){
         return this.mRepository.getUserName(1);
     }
+
+    public LiveData<String> getProfileNameAccordingToID(int profileID){
+        return this.mRepository.getProfileNameAccordingToID(profileID);
+    }
 }

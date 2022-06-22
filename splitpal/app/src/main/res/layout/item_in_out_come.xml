@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="@dimen/nomoola_cardView_cornerRadius"
@@ -39,7 +39,7 @@
                     android:text="@string/nomoola_inoutcome_month"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/item_inoutcome_dateDay"
@@ -49,7 +49,7 @@
                     android:text="@string/nomoola_inoutcome_day"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/item_inoutcome_dateYear"
@@ -58,7 +58,7 @@
                     android:fontFamily="@font/lato"
                     android:text="@string/nomoola_inoutcome_year"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     tools:textAlignment="center" />
             </LinearLayout>
 
@@ -81,7 +81,7 @@
                     android:text="@string/nomoola_name"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/item_inoutcome_amount"
@@ -91,7 +91,7 @@
                     android:text="@string/budget_preview"
                     android:textAlignment="center"
                     android:textColor="@color/nomoola_grey_text"
-                    android:textSize="11sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -108,9 +108,22 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_bias="0.6"
                 app:srcCompat="@drawable/ic_edit"
                 tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:id="@+id/item_subcat_ownerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_black"
+                android:text="TextView"
+                android:textAllCaps="true"
+                android:textColor="@color/nomoola_blue"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/item_inoutcome_editButton"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

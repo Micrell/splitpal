@@ -8,15 +8,19 @@ import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import com.example.nomoola.database.entity.InOutCome;
+import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.viewHolder.InOutComeViewHolder;
+import com.example.nomoola.viewModel.SubcategoryViewModel;
 
 public class InOutComeAdapter extends ListAdapter<InOutCome, InOutComeViewHolder> {
 
     private FragmentManager fragmentManager;
+    private SubcategoryViewModel subcategoryViewModel;
 
-    public InOutComeAdapter(@NonNull DiffUtil.ItemCallback<InOutCome> diffCallback, FragmentManager fragmentManager) {
+    public InOutComeAdapter(@NonNull DiffUtil.ItemCallback<InOutCome> diffCallback, FragmentManager fragmentManager, SubcategoryViewModel subcategoryViewModel) {
         super(diffCallback);
         this.fragmentManager = fragmentManager;
+        this.subcategoryViewModel = subcategoryViewModel;
     }
 
     @NonNull
@@ -25,7 +29,7 @@ public class InOutComeAdapter extends ListAdapter<InOutCome, InOutComeViewHolder
         Log.d("CREATION", "onCreateViewHolder from " + this.getClass().toString() + " started");
 
         Log.d("CREATION", "onCreateViewHolder from " + this.getClass().toString() + " finished");
-        return InOutComeViewHolder.create(parent, this.fragmentManager);
+        return InOutComeViewHolder.create(parent, this.fragmentManager, subcategoryViewModel);
     }
 
     @Override
