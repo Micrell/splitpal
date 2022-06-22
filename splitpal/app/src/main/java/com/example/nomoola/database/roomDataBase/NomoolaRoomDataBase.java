@@ -15,16 +15,18 @@ import com.example.nomoola.database.dao.CategoryDAO;
 import com.example.nomoola.database.dao.InOutComeDAO;
 import com.example.nomoola.database.dao.SubCategoryDAO;
 import com.example.nomoola.database.dao.ProfileDAO;
+import com.example.nomoola.database.dao.SubCategoryProfileDAO;
 import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.InOutCome;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.database.entity.Profile;
+import com.example.nomoola.database.entity.SubCategoryProfile;
 
 import java.time.LocalDate;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Category.class, SubCategory.class, InOutCome.class, Profile.class}, version = 1, exportSchema = false)
+@Database(entities = {Category.class, SubCategory.class, InOutCome.class, Profile.class, SubCategoryProfile.class}, version = 1, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class NomoolaRoomDataBase extends RoomDatabase {
 
@@ -32,6 +34,7 @@ public abstract class NomoolaRoomDataBase extends RoomDatabase {
     public abstract SubCategoryDAO subCategoryDAO();
     public abstract InOutComeDAO inOutComeDAO();
     public abstract ProfileDAO profileDAO();
+    public abstract SubCategoryProfileDAO subCategoryProfileDAO();
 
     private static volatile NomoolaRoomDataBase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -70,6 +73,7 @@ public abstract class NomoolaRoomDataBase extends RoomDatabase {
                 populateSubCategory();
                 populateInOutCome();
                 populateProfile();
+                populateSubCatProfile();
             });
         }
 
@@ -118,8 +122,42 @@ public abstract class NomoolaRoomDataBase extends RoomDatabase {
         private void populateProfile(){
             ProfileDAO dao = INSTANCE.profileDAO();
 
-            Profile profile = new Profile(1, "John", Profile.userLanguage.ENGLISH, Profile.userCurrency.USDOLLAR);
+            Profile profile = new Profile("Philippe", Profile.userLanguage.ENGLISH, Profile.userCurrency.USDOLLAR);
             dao.insertProfile(profile);
+            profile = new Profile("John", Profile.userLanguage.ENGLISH, Profile.userCurrency.USDOLLAR);
+            dao.insertProfile(profile);
+            profile = new Profile("Ercan", Profile.userLanguage.ENGLISH, Profile.userCurrency.USDOLLAR);
+            dao.insertProfile(profile);
+            profile = new Profile("Jean-Paul", Profile.userLanguage.ENGLISH, Profile.userCurrency.USDOLLAR);
+            dao.insertProfile(profile);
+            profile = new Profile("Jules", Profile.userLanguage.ENGLISH, Profile.userCurrency.USDOLLAR);
+            dao.insertProfile(profile);
+        }
+
+        private void populateSubCatProfile(){
+            SubCategoryProfileDAO dao = INSTANCE.subCategoryProfileDAO();
+
+            SubCategoryProfile subCategoryProfile = new SubCategoryProfile(1, 1);
+            dao.insertSubCatProfile(subCategoryProfile);
+            subCategoryProfile = new SubCategoryProfile(1, 2);
+            dao.insertSubCatProfile(subCategoryProfile);
+            subCategoryProfile = new SubCategoryProfile(1, 3);
+            dao.insertSubCatProfile(subCategoryProfile);
+
+            subCategoryProfile = new SubCategoryProfile(2, 1);
+            dao.insertSubCatProfile(subCategoryProfile);
+            subCategoryProfile = new SubCategoryProfile(2, 2);
+            dao.insertSubCatProfile(subCategoryProfile);
+            subCategoryProfile = new SubCategoryProfile(2, 3);
+            dao.insertSubCatProfile(subCategoryProfile);
+            subCategoryProfile = new SubCategoryProfile(2, 4);
+            dao.insertSubCatProfile(subCategoryProfile);
+
+            subCategoryProfile = new SubCategoryProfile(3, 1);
+            dao.insertSubCatProfile(subCategoryProfile);
+            subCategoryProfile = new SubCategoryProfile(3, 2);
+            dao.insertSubCatProfile(subCategoryProfile);
+
         }
     };
 

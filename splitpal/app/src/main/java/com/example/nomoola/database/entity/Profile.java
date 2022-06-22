@@ -43,20 +43,20 @@ public class Profile {
     }
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "USER_ID")
-    private int m_USER_ID;
+    @ColumnInfo(name = "PROFILE_ID")
+    private int m_PROFILE_ID;
 
     @NonNull
-    @ColumnInfo(name = "USERNAME")
+    @ColumnInfo(name = "PROFILE_NAME")
     private String m_USERNAME;
 
     @NonNull
-    @ColumnInfo(name = "LANGUAGE")
+    @ColumnInfo(name = "PROFILE_LANGUAGE")
     private userLanguage m_LANGUAGE;
 
 
     @NonNull
-    @ColumnInfo(name = "CURRENCY")
+    @ColumnInfo(name = "PROFILE_CURRENCY")
     private userCurrency m_CURRENCY;
 
 
@@ -67,9 +67,8 @@ public class Profile {
     public Profile(){
     }
 
-    public Profile(@NonNull int userID, @NonNull String userName, @NonNull userLanguage language, @NonNull userCurrency currency){
-        Log.d("CREATION", "Instantiation of Profile = "+ userID + " "+userName);
-        this.m_USER_ID = userID;
+    public Profile(@NonNull String userName, @NonNull userLanguage language, @NonNull userCurrency currency){
+        Log.d("CREATION", "Instantiation of Profile = " + " "+userName);
         this.m_USERNAME = userName;
         this.m_LANGUAGE = language;
         this.m_CURRENCY = currency;
@@ -80,14 +79,16 @@ public class Profile {
     /**
      * GETTER / SETTER
      */
-    public int getM_USER_ID() {
-        return m_USER_ID;
+
+    public int getM_PROFILE_ID() {
+        return m_PROFILE_ID;
     }
 
-    public void setM_USER_ID(int m_USER_ID) {
-        this.m_USER_ID = m_USER_ID;
+    public void setM_PROFILE_ID(int m_PROFILE_ID) {
+        this.m_PROFILE_ID = m_PROFILE_ID;
     }
 
+    @NonNull
     public String getM_USERNAME() {
         return m_USERNAME;
     }
@@ -105,11 +106,12 @@ public class Profile {
         this.m_LANGUAGE = m_LANGUAGE;
     }
 
+    @NonNull
     public userCurrency getM_CURRENCY() {
         return m_CURRENCY;
     }
 
-    public void setM_CURRENCY(userCurrency m_CURRENCY) {
+    public void setM_CURRENCY(@NonNull userCurrency m_CURRENCY) {
         this.m_CURRENCY = m_CURRENCY;
     }
 }

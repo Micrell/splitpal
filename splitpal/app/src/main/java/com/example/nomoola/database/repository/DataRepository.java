@@ -8,10 +8,12 @@ import com.example.nomoola.database.dao.CategoryDAO;
 import com.example.nomoola.database.dao.InOutComeDAO;
 import com.example.nomoola.database.dao.SubCategoryDAO;
 import com.example.nomoola.database.dao.ProfileDAO;
+import com.example.nomoola.database.dao.SubCategoryProfileDAO;
 import com.example.nomoola.database.entity.Category;
 import com.example.nomoola.database.entity.InOutCome;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.database.entity.Profile;
+import com.example.nomoola.database.entity.SubCategoryProfile;
 import com.example.nomoola.database.roomDataBase.NomoolaRoomDataBase;
 
 import java.time.LocalDate;
@@ -31,6 +33,8 @@ public class DataRepository {
     private ProfileDAO mProfileDAO;
     private LiveData<Profile> mProfile;
 
+    private SubCategoryProfileDAO mSubCategoryProfileDAO;
+
     public DataRepository(Application application) {
         Log.d("CREATION", "Instantiation of CategoryRepository");
         NomoolaRoomDataBase db = NomoolaRoomDataBase.getDatabase(application);
@@ -46,6 +50,8 @@ public class DataRepository {
 
         mProfileDAO = db.profileDAO();
         mProfile = mProfileDAO.getProfile();
+
+        mSubCategoryProfileDAO = db.subCategoryProfileDAO();
     }
 
     /*
@@ -214,4 +220,41 @@ public class DataRepository {
     public LiveData<Double> getAmountUsedBySubcategory(int m_subcat_id) {
         return this.mInOutComeDAO.getAmountUsedBySubcategory(m_subcat_id);
     }
+
+    /*
+        SUBCATEGORYPROFILE
+     */
+
+    public void insertSubCatProfile(SubCategoryProfile...subCategoryProfiles){
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
+            mSubCategoryProfileDAO.insertSubCatProfile(subCategoryProfiles);
+        });
+    }
+
+    public void updateSubCatProfile(SubCategoryProfile...subCategoryProfiles){
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
+            mSubCategoryProfileDAO.updateSubCatProfile(subCategoryProfiles);
+        });
+    }
+
+    public void deleteSubCatProfile(SubCategoryProfile subCategoryProfile){
+        NomoolaRoomDataBase.databaseWriteExecutor.execute(() -> {
+            mSubCategoryProfileDAO.deleteSubCatProfile(subCategoryProfile);
+        });
+    }
+
+    public LiveData<List<SubCategoryProfile>> getAllSubCatProfile(){
+        return this.mSubCategoryProfileDAO.getAllSubCatProfile();
+    }
+
+    public LiveData<List<Profile>> getProfileFromSubCat(int subCatID){
+        return this.mSubCategoryProfileDAO.getProfileFromSubCat(subCatID);
+    }
+
+    public LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID){
+        return this.mSubCategoryProfileDAO.getNumberOfMembersInSubCategory(subCatID);
+    }
+
+
+
 }
