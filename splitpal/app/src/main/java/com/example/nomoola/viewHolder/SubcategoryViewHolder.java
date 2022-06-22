@@ -23,9 +23,8 @@ import com.example.nomoola.viewModel.SubcategoryViewModel;
 
 public class SubcategoryViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView subcatName, subCatBudgetPercentUsedView, subCatBudgetAmountUsedView;
+    private TextView subcatName, subcatNumberMember;
     private ImageButton editSubcatButton;
-    private ProgressBar percentBudgetLeft;
     private CardView cardView;
 
     private SubcategoryViewModel subcategoryViewModel;
@@ -41,9 +40,7 @@ public class SubcategoryViewHolder extends RecyclerView.ViewHolder {
 
         this.subcatName = view.findViewById(R.id.item_subCat_name);
         this.editSubcatButton = view.findViewById(R.id.item_subCat_editSubCat);
-        //this.percentBudgetLeft = view.findViewById(R.id.item_subCat_progressBar);
-        //this.subCatBudgetPercentUsedView = view.findViewById(R.id.item_subcategory_budgetUsedTextView);
-        //this.subCatBudgetAmountUsedView = view.findViewById(R.id.item_subcategory_amountUsed);
+
         this.cardView = view.findViewById(R.id.item_subCat_cardView);
 
         this.editSubcatButton.setOnClickListener(new View.OnClickListener() {
@@ -60,36 +57,25 @@ public class SubcategoryViewHolder extends RecyclerView.ViewHolder {
                 FragmentTransaction trans = fragmentManager.beginTransaction();
                 trans.replace(R.id.fragmentContainerView, new InOutComeFragment(subCategory));
                 trans.setReorderingAllowed(true);
-                //trans.addToBackStack(null);
+                trans.addToBackStack(null);
                 trans.commit();
             }
         });
+
+        this.subcatNumberMember = view.findViewById(R.id.item_subcat_numberMember);
+
     }
 
     public void bind(SubCategory subcategory){
         this.subCategory = subcategory;
         this.subcatName.setText(this.subCategory.getM_SUBCAT_NAME());
 
-        /*
-        this.subcategoryViewModel.getPercentUsedBySubcategory(this.subCategory).observe((LifecycleOwner) view.getContext(), new Observer<Integer>() {
+        this.subcategoryViewModel.getNumberOfMembersInSubCategory(this.subCategory.getM_SUBCAT_ID()).observe((LifecycleOwner)view.getContext(), new Observer<Integer>() {
             @Override
-            public void onChanged(Integer percentUsed) {
-                if(percentUsed == null){
-                    percentUsed = 0;
-                }
-                percentBudgetLeft.setProgress(percentUsed);
-                subCatBudgetPercentUsedView.setText(percentUsed + "%");
+            public void onChanged(Integer integer) {
+                subcatNumberMember.setText(String.valueOf(integer));
             }
         });
-
-        this.subcategoryViewModel.getAmountUsedBySubcategory(this.subCategory).observe((LifecycleOwner) view.getContext(), new Observer<Double>() {
-            @Override
-            public void onChanged(Double amountUsed) {
-                subCatBudgetAmountUsedView.setText(amountUsed + "€");
-            }
-        });
-         */
-
 
     }
 
