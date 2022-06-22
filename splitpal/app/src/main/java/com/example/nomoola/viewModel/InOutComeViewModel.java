@@ -6,8 +6,12 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.nomoola.database.entity.InOutCome;
+import com.example.nomoola.database.entity.Profile;
 import com.example.nomoola.database.entity.SubCategory;
+import com.example.nomoola.database.entity.SubCategoryProfile;
 import com.example.nomoola.database.repository.DataRepository;
+import com.example.nomoola.database.roomDataBase.NomoolaRoomDataBase;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -50,4 +54,28 @@ public class InOutComeViewModel extends AndroidViewModel {
         return this.mRepository.getSubCategoriesNamed(name);
     }
 
+    public void insertSubCatProfile(SubCategoryProfile...subCategoryProfiles){
+            this.mRepository.insertSubCatProfile(subCategoryProfiles);
+
+    }
+
+    public void updateSubCatProfile(SubCategoryProfile...subCategoryProfiles){
+            this.mRepository.updateSubCatProfile(subCategoryProfiles);
+    }
+
+    public void deleteSubCatProfile(SubCategoryProfile subCategoryProfile){
+            this.mRepository.deleteSubCatProfile(subCategoryProfile);
+    }
+
+    public LiveData<List<SubCategoryProfile>> getAllSubCatProfile(){
+        return this.mRepository.getAllSubCatProfile();
+    }
+
+    public LiveData<List<Profile>> getProfileFromSubCat(int subCatID){
+        return this.mRepository.getProfileFromSubCat(subCatID);
+    }
+
+    public LiveData<Integer> getNumberOfMembersInSubCategory(int subCatID){
+        return this.mRepository.getNumberOfMembersInSubCategory(subCatID);
+    }
 }
