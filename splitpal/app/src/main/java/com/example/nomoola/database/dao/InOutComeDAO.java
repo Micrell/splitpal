@@ -35,6 +35,16 @@ public interface InOutComeDAO {
 
     @Query("SELECT SUM(INOUTCOME_AMOUNT) " +
             "FROM T_INOUTCOME " +
+            "WHERE SUBCAT_ID=:subCategoryID AND INOUTCOME_OWNER_ID=:ownerID ")
+    LiveData<Double> getInOutComesOfSubCatOfOwner(int subCategoryID, int ownerID);
+
+    @Query("SELECT SUM(INOUTCOME_AMOUNT) " +
+            "FROM T_INOUTCOME " +
             "WHERE SUBCAT_ID=:m_subcat_id")
     LiveData<Double> getAmountUsedBySubcategory(int m_subcat_id);
+
+    @Query("SELECT SUM(INOUTCOME_AMOUNT) " +
+            "FROM T_INOUTCOME " +
+            "WHERE INOUTCOME_OWNER_ID=:ownerID")
+    LiveData<Double> getToTtalExpense(int ownerID);
 }

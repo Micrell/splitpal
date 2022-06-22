@@ -32,7 +32,7 @@ public class GroupAdapter extends ListAdapter<Profile, GroupViewHolder> {
     @NonNull
     @Override
     public GroupViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return GroupViewHolder.create(parent, this.fragmentManager);
+        return GroupViewHolder.create(parent, this.fragmentManager, this.inOutComeViewModel);
     }
 
     @Override

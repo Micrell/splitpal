@@ -198,4 +198,7 @@ public class DataRepository {
         return this.mProfileDAO.getProfileNameAccordingToID(profileID);
     }
 
+    public LiveData<Double> getToTtalExpense(int ownerID){
+        return this.mInOutComeDAO.getToTtalExpense(ownerID);
+    }
 }

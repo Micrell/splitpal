@@ -94,6 +94,12 @@ public abstract class NomoolaRoomDataBase extends RoomDatabase {
             dao.insertInOutCome(come);
             come = new InOutCome("motor reparation", 1, 207.90, LocalDate.now(), 3);
             dao.insertInOutCome(come);
+            come = new InOutCome("week grocery at SuperU",1, 56.89, LocalDate.now(), 1);
+            dao.insertInOutCome(come);
+            come = new InOutCome("BK with my friends", 1, 13.50, LocalDate.now(), 2);
+            dao.insertInOutCome(come);
+            come = new InOutCome("motor reparation", 1, 207.90, LocalDate.now(), 3);
+            dao.insertInOutCome(come);
 
 
             come = new InOutCome("weekly fuel", 2, 60.00, LocalDate.now(), 1);
