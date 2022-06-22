@@ -23,7 +23,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if(position==1){
-            return new GroupFragment();
+            return new GroupFragment(this.subCategory);
         }
         return new ActivityFragment(this.subCategory);
     }

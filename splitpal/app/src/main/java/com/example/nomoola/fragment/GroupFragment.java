@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,22 +59,10 @@ public class GroupFragment extends Fragment {
         this.recyclerView = view.findViewById(R.id.equilibre_recyclerView);
         this.recyclerView.setAdapter(this.groupAdapter);
 
-        List<Profile> list = new ArrayList<>();
-        Profile p = new Profile();
-        p.setM_USERNAME("Ercan");
-        list.add(p);
-        Profile p2 = new Profile();
-        p2.setM_USERNAME("Jules");
-        list.add(p2);
-        groupAdapter.submitList(list);
-
-
-
-        /*
-        mInOutViewModel.getInOutComeOf(subCategory.getM_SUBCAT_ID()).observe(getViewLifecycleOwner(), subCategories -> {
-            groupAdapter.submitList(subCategories);
+        mInOutViewModel.getProfileFromSubCat(this.subCategory.getM_SUBCAT_ID()).observe(getViewLifecycleOwner(), profiles -> {
+            Log.d("Profile", String.valueOf(profiles.size()));
+            groupAdapter.submitList(profiles);
         });
-         */
 
         return view;
     }
