@@ -1,25 +1,32 @@
 package com.example.nomoola.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+
 import com.example.nomoola.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.math.BigInteger;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("CREATION", "onCreate from " + this.getClass().toString() + " started");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         getSupportActionBar().show();
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
