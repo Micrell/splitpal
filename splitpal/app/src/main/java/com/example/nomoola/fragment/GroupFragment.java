@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +53,7 @@ public class GroupFragment extends Fragment {
 
 
         this.mInOutViewModel = new ViewModelProvider(this).get(InOutComeViewModel.class);
-        this.groupAdapter = new GroupAdapter(new GroupAdapter.GroupDiff(), this.getParentFragmentManager(), this.mInOutViewModel);
+        this.groupAdapter = new GroupAdapter(new GroupAdapter.GroupDiff(), this.getParentFragmentManager(), this.mInOutViewModel, this.subCategory);
         View view= inflater.inflate(R.layout.fragment_group, container, false);
 
 
@@ -60,12 +61,10 @@ public class GroupFragment extends Fragment {
         this.recyclerView.setAdapter(this.groupAdapter);
 
         mInOutViewModel.getProfileFromSubCat(this.subCategory.getM_SUBCAT_ID()).observe(getViewLifecycleOwner(), profiles -> {
+
             groupAdapter.submitList(profiles);
         });
-        /*
 
-
-         */
         return view;
     }
 }

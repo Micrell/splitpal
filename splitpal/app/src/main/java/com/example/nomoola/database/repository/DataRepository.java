@@ -14,7 +14,6 @@ import com.example.nomoola.database.entity.Profile;
 import com.example.nomoola.database.entity.SubCategoryProfile;
 import com.example.nomoola.database.roomDataBase.NomoolaRoomDataBase;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class DataRepository {
@@ -206,4 +205,7 @@ public class DataRepository {
         return this.mProfileDAO.getAllUsernames();
     }
 
+    public LiveData<Double> getToTtalExpense(int ownerID, int subCatID){
+        return this.mInOutComeDAO.getTotalExpense(ownerID, subCatID);
+    }
 }

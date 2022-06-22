@@ -9,14 +9,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nomoola.R;
 import com.example.nomoola.database.entity.InOutCome;
 import com.example.nomoola.database.entity.Profile;
+import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.fragment.dialog.EditInOutComeDialog;
 import com.example.nomoola.viewModel.InOutComeViewModel;
 import com.example.nomoola.viewModel.ProfileViewModel;
+import com.example.nomoola.viewModel.SubcategoryViewModel;
+
+import org.w3c.dom.Text;
 
 import java.time.format.DateTimeFormatter;
 
@@ -25,10 +31,15 @@ public class GroupViewHolder extends RecyclerView.ViewHolder{
 
     private InOutComeViewModel inOutComeViewModel;
     private View view;
+    private TextView sumText;
+    private SubCategory subcategory;
 
-    public GroupViewHolder(@NonNull View itemView) {
+public GroupViewHolder(@NonNull View itemView, InOutComeViewModel inOutComeViewModel, SubCategory subCategory) {
         super(itemView);
         this.view = itemView;
+        this.inOutComeViewModel = inOutComeViewModel;
+        this.subcategory = subCategory;
+        this.sumText = view.findViewById(R.id.item_balance_moneyOweAmount);
     }
 
     private String getColorCode(String inputString) {
@@ -55,11 +66,17 @@ public class GroupViewHolder extends RecyclerView.ViewHolder{
     }
     public void bind(Profile profile){
         setAvatar(profile.getM_USERNAME());
+        this.inOutComeViewModel.getToTtalExpense(profile.getM_PROFILE_ID(), this.subcategory.getM_SUBCAT_ID()).observe((LifecycleOwner) view.getContext(), new Observer<Double>() {
+            @Override
+            public void onChanged(Double sum) {
+                sumText.setText("$"+sum);
+            }
+        });
     }
 
-    public static GroupViewHolder create(ViewGroup parent, FragmentManager fragmentManager){
+    public static GroupViewHolder create(ViewGroup parent, FragmentManager fragmentManager, InOutComeViewModel inOutComeViewModel, SubCategory subCategory){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_group, parent, false);
-        return new GroupViewHolder(view);
+        return new GroupViewHolder(view, inOutComeViewModel, subCategory);
     }
 
 }
