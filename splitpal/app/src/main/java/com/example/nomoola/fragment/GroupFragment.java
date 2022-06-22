@@ -17,6 +17,9 @@ import com.example.nomoola.database.entity.Profile;
 import com.example.nomoola.database.entity.SubCategory;
 import com.example.nomoola.viewModel.InOutComeViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class GroupFragment extends Fragment {
 
@@ -54,6 +57,16 @@ public class GroupFragment extends Fragment {
 
         this.recyclerView = view.findViewById(R.id.equilibre_recyclerView);
         this.recyclerView.setAdapter(this.groupAdapter);
+
+        List<Profile> list = new ArrayList<>();
+        Profile p = new Profile();
+        p.setM_USERNAME("Ercan");
+        list.add(p);
+        Profile p2 = new Profile();
+        p2.setM_USERNAME("Jules");
+        list.add(p2);
+        groupAdapter.submitList(list);
+
 
 
         /*

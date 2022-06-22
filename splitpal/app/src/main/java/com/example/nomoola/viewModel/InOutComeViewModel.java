@@ -49,4 +49,5 @@ public class InOutComeViewModel extends AndroidViewModel {
     public SubCategory getSubCategoriesNamed(String name){
         return this.mRepository.getSubCategoriesNamed(name);
     }
+
 }
