@@ -42,6 +42,7 @@
         <entry key="..\:/UTBM/INFO_2/SY43/Projet/nomoola/app/src/main/res/menu/bottom_menu.xml" value="0.3087719298245614" />
         <entry key="..\:/UTBM/INFO_2/SY43/Projet/nomoola/app/src/main/res/xml/preferences.xml" value="0.32592592592592595" />
         <entry key="..\:/UTBM/INFO_2/SY43/nomoola/app/src/main/res/layout/activity_main.xml" value="0.33" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/ercan/Documents/code/HM40/splitpal/splitpal/app/src/main/res/drawable-anydpi/ic_edit.xml" value="0.1465" />
         <entry key="..\:/Users/ercan/Documents/code/HM40/splitpal/splitpal/app/src/main/res/drawable/ic_baseline_done_24.xml" value="0.1815" />
         <entry key="..\:/Users/ercan/Documents/code/HM40/splitpal/splitpal/app/src/main/res/layout/activity_category.xml" value="0.1" />
@@ -53,6 +54,14 @@
         <entry key="..\:/Users/ercan/Documents/code/HM40/splitpal/splitpal/app/src/main/res/layout/fragment_subcategory.xml" value="0.2" />
         <entry key="..\:/Users/ercan/Documents/code/HM40/splitpal/splitpal/app/src/main/res/layout/item_category.xml" value="0.1503623188405797" />
         <entry key="..\:/Users/ercan/Documents/code/HM40/splitpal/splitpal/app/src/main/res/layout/item_subcategory.xml" value="0.36678832116788324" />
+=======
+        <entry key="..\:/Users/Jean-Paul/AndroidStudioProjects/splitpal/splitpal/app/src/main/res/drawable-xxhdpi/tab_indicator.xml" value="0.1935" />
+        <entry key="..\:/Users/Jean-Paul/AndroidStudioProjects/splitpal/splitpal/app/src/main/res/layout/activity_category.xml" value="0.29583333333333334" />
+        <entry key="..\:/Users/Jean-Paul/AndroidStudioProjects/splitpal/splitpal/app/src/main/res/layout/fragment_activity.xml" value="0.22" />
+        <entry key="..\:/Users/Jean-Paul/AndroidStudioProjects/splitpal/splitpal/app/src/main/res/layout/fragment_group.xml" value="0.22" />
+        <entry key="..\:/Users/Jean-Paul/AndroidStudioProjects/splitpal/splitpal/app/src/main/res/layout/fragment_in_out_come.xml" value="0.29583333333333334" />
+        <entry key="..\:/Users/Jean-Paul/AndroidStudioProjects/splitpal/splitpal/app/src/main/res/layout/fragment_subcategory.xml" value="0.29583333333333334" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/SY43/Projet/SY43_P2022/nomoola/app/src/main/res/drawable-anydpi/ic_add_category.xml" value="0.3675" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/SY43/Projet/SY43_P2022/nomoola/app/src/main/res/drawable-anydpi/ic_close_dialog.xml" value="0.2335" />
         <entry key="..\:/Users/jules/OneDrive - Universite De Technologie De Belfort-Montbeliard/Documents/UTBM/INFO02/SY43/Projet/SY43_P2022/nomoola/app/src/main/res/drawable-anydpi/ic_edit_category.xml" value="0.3675" />

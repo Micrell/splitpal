@@ -15,41 +15,34 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.tabs.TabLayout
+        android:background="@color/white"
+        android:id="@+id/tabLayout"
+        app:tabIndicator="@drawable/tab_indicator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:background="@color/white"
-            android:contentDescription="@string/nomoola_filtre"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_filter"
-            tools:ignore="RedundantDescriptionCheck" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <RelativeLayout
+        android:layout_margin="5dp"
+        android:layout_height="50dp"
+        app:tabIndicatorColor="@color/nomoola_blue"
+        android:layout_gravity="center|top"
+        app:tabGravity="fill"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorGravity="stretch"
+        app:tabTextColor="@color/black"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/white"
+        tools:ignore="SpeakableTextPresentCheck"
+        />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/child_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/inOutCome_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_in_out_come" />
+    </androidx.viewpager2.widget.ViewPager2>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fragment_come_addInOutCome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,6 +57,5 @@
             android:outlineSpotShadowColor="@color/nomoola_blue"
             app:srcCompat="@drawable/ic_add_plus"
             app:tint="@color/white" />
-    </RelativeLayout>
 
 </LinearLayout>
