@@ -21,10 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/nomoola_subcategory_newSubCat"
+            android:gravity="start"
+            android:text="New Group"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="start"/>
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/dialog_subcat_exitButton"

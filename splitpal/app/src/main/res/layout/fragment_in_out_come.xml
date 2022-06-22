@@ -14,29 +14,33 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/members_recyclerview"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="-25dp"
         android:layout_gravity="end"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-25dp"
         android:layout_marginEnd="25dp"
-        tools:listitem="@layout/item_member"
-        android:id="@+id/members_recyclerview"/>
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        tools:listitem="@layout/item_member" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/add_new_member"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:cardCornerRadius="50dp"
-        android:backgroundTint="@color/white"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="-50dp"
-        android:layout_marginStart="25dp">
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="50dp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
             app:srcCompat="@drawable/ic_add_plus"
-            app:tint="@color/nomoola_blue"
-            android:layout_margin="10dp"/>
+            app:tint="@color/nomoola_blue" />
     </androidx.cardview.widget.CardView>
     <com.google.android.material.tabs.TabLayout
         android:background="@color/white"
@@ -55,27 +59,33 @@
         app:tabSelectedTextColor="@color/white"
         tools:ignore="SpeakableTextPresentCheck"
         />
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/child_fragment_container"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-    </androidx.viewpager2.widget.ViewPager2>
-
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fragment_come_addInOutCome"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/subcategory_addSubcategory_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
             android:backgroundTint="@color/nomoola_blue"
             android:clickable="true"
             android:outlineSpotShadowColor="@color/nomoola_blue"
             app:srcCompat="@drawable/ic_add_plus"
             app:tint="@color/white" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/child_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        </androidx.viewpager2.widget.ViewPager2>
+    </RelativeLayout>
+
 
 </LinearLayout>

@@ -18,7 +18,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.nomoola.R;
 import com.example.nomoola.adapter.FragmentAdapter;
-import com.example.nomoola.adapter.InOutComeAdapter;
 import com.example.nomoola.adapter.MembersAdapter;
 import com.example.nomoola.database.entity.Profile;
 import com.example.nomoola.database.entity.SubCategory;
@@ -117,7 +116,7 @@ public class InOutComeFragment extends Fragment {
 
 
 
-        this.addCome = view.findViewById(R.id.fragment_come_addInOutCome);
+        this.addCome = view.findViewById(R.id.subcategory_addSubcategory_button);
         this.addCome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

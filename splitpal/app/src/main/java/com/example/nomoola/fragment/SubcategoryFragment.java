@@ -23,6 +23,7 @@ import com.example.nomoola.R;
 import com.example.nomoola.adapter.SubcategoryAdapter;
 import com.example.nomoola.fragment.dialog.AddSubCategoryDialog;
 import com.example.nomoola.viewModel.SubcategoryViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
 
@@ -31,7 +32,7 @@ public class SubcategoryFragment extends Fragment {
     private SubcategoryViewModel mSubcategoryViewModel;
     private RecyclerView subcategoryRecyclerView;
     private SubcategoryAdapter subcategoryAdapter;
-    private AppCompatButton addSubcatButton;
+    private FloatingActionButton addSubcatButton;
     private TextView nameProfile;
 
     public SubcategoryFragment(){
